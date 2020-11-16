@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fb0dc5010d1, pid=29497, tid=29514
+#
+# JRE version: Java(TM) SE Runtime Environment 18.9 (11.0.8+10) (build 11.0.8+10-LTS)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM 18.9 (11.0.8+10-LTS, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x40d1]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x71
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:36177 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=37963 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Djava.security.egd=file:/dev/./urandom -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=Flashtract -javaagent:/home/juan/Documents/SOFTWARE/IDEs/sts-4.7.0.RELEASE/configuration/org.eclipse.osgi/241/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 com.example.demo.FlashtractApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz, 4 cores, 5G, elementary OS 5.1.7 Hera
+Time: Sun Nov 15 16:29:20 2020 -05 elapsed time: 5150 seconds (0d 1h 25m 50s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fb0d81a9000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=29514, stack(0x00007fb0acff5000,0x00007fb0ad0f6000)]
+
+Stack: [0x00007fb0acff5000,0x00007fb0ad0f6000],  sp=0x00007fb0ad0f3060,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x40d1]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x71
+C  [libjimage.so+0x4dba]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x3a
+C  [libjimage.so+0x52ba]  JIMAGE_FindResource+0xfa
+V  [libjvm.so+0x5d092e]
